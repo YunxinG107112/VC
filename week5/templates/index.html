@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <h1>Diabetes Prediction</h1>
+    <form method="post" action="/predict">
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" step="any" required><br>
+        <label for="hypertension">Hypertension (0 or 1):</label>
+        <input type="number" name="hypertension" id="hypertension" min="0" max="1" required><br>
+        <label for="heart_disease">Heart Disease (0 or 1):</label>
+        <input type="number" name="heart_disease" id="heart_disease" min="0" max="1" required><br>
+        <label for="blood_glucose_level">Blood Glucose Level:</label>
+        <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="any" required><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
